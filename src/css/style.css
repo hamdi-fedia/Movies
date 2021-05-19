@@ -9,20 +9,37 @@ body{
 .navbar-light .navbar-nav .nav-link.active {
     color: rgb(255, 255, 255);
 }
-.navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link a{
     color: rgb(255, 255, 255);
     font-weight: 800;
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
+    text-decoration: none;
 }
-.navbar-light .navbar-nav .nav-link:hover{
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+}
+.navbar-light .navbar-nav .nav-link a:hover{
     color: #e5af44;
 }
-.form-control {
-    margin: 0 !important;
+.navbar-light .navbar-nav .nav-link:hover{
+  color: #e5af44;
+}
+.form-inline .form-control {
+    margin: 0 0 0 13%!important;
     color: #e5af44;
     background-color: #fff0;
     border: 1px solid #e5af44;
+    width: 70%;
+}
+.form-control {
+  margin: 0 !important;
+  color: #e5af44;
+  background-color: #fff0;
+  border: 1px solid #e5af44;
 }
 .form-control:focus {
     color: #e5af44;
@@ -180,7 +197,7 @@ span{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    right: 95px;
+    left: 65px;
     bottom: 111px;
     font-size: 27px;
     padding-left: 21px;
@@ -201,7 +218,7 @@ span{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    right: 20px;
+    right: 60px;
     bottom: 111px;
     font-size: 27px;
     padding-left: 17px;
@@ -383,3 +400,39 @@ span{
       padding-right: 0;
   }
   }
+
+  .react-rater-star.is-active {
+    color: #e5af44 !important ;
+}
+.card-fav{
+  font-size: 20px !important;
+  padding:  30px !important;
+}
+.play_buttonn-fav{
+  background-color: rgb(229 175 68);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  left: 90px;
+  bottom: 111px;
+  font-size: 27px;
+  padding-left: 20px;
+  padding-top: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.play_button-fav{
+  background-color: rgb(229 175 68);
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    right: 60px;
+    bottom: 111px;
+    font-size: 27px;
+    padding-left: 19px;
+    padding-top: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+}

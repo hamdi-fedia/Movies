@@ -1,13 +1,21 @@
 import React ,{useState} from 'react'
+
 import style from '../css/style.css'
 import {Navbar,Nav,Form,FormControl,Button,Modal,Tabs,Tab} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 
-function Movienav (){
+
+function Movienav ({handleSearchTerm, notheart}){
+  // ********************modl****************//
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+ // ********************search****************//
+
+  
 
     return(
+      
       <div>
 <Navbar bg="light" expand="lg">
   <Navbar.Brand href="#home">
@@ -16,15 +24,15 @@ function Movienav (){
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">About Us</Nav.Link>
-      <Nav.Link href="#link">Movies</Nav.Link>
-      <Nav.Link href="#link">Contact Us</Nav.Link>
+   
+      <Nav.Link > <Link  to="/">Home</Link></Nav.Link>
+      <Nav.Link ><Link  to="/about">About Us</Link></Nav.Link>
+      <Nav.Link ><Link  to="/movies">Movies</Link></Nav.Link>
     <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleSearchTerm}/>
       <Button variant="outline-dark"><i class="fas fa-search"></i></Button>
     </Form>
-    <Nav.Link href="#link"> <i class="fas fa-heart"></i></Nav.Link>
+    <Nav.Link ><Link  to="/favorit"><i class="fas fa-heart">{notheart}</i></Link> </Nav.Link>
     <Button variant="primary" id="user" onClick={handleShow}>
     <Nav.Link href="#link"> <i class="far fa-user"></i></Nav.Link>
      </Button>
@@ -82,6 +90,7 @@ function Movienav (){
 
 
       </div>
+     
     )
 }
 export default Movienav
