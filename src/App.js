@@ -7,6 +7,7 @@ import AboutMou from './components/aboutmouv';
 import CardMovies from './components/cardmov';
 import Favorit from './components/favorit';
 import { useState } from 'react';
+import Admin from './components/admin';
 function App() {
 
   const[notheart , setNotheart] = useState(0);
@@ -40,7 +41,7 @@ function App() {
           <Route   path="/about"> <AboutMou notheart={notheart} /></Route>
           <Route   path="/movies" ><CardMovies notheart={notheart} addNotHeart = {addNotHeart} addfavorit = {addfavorit}  handleSearchTerm={handleSearchTerm} searchMovie={searchMovie}/></Route>
           <Route   path="/favorit"> <Favorit favorit={favorit} notheart={notheart}/> </Route>
-         
+          <Route   path="/admin"> <Admin></Admin> </Route>
         
       </BrowserRouter>
     </div>
