@@ -17,7 +17,7 @@ function Movienav ({handleSearchTerm, notheart}){
     return(
       
       <div>
-<Navbar bg="light" expand="lg">
+<Navbar bg="movie" expand="lg">
   <Navbar.Brand href="#home">
       <img src="/img/logo.png" className="logo"></img>
   </Navbar.Brand>
@@ -25,14 +25,14 @@ function Movienav ({handleSearchTerm, notheart}){
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
    
-      <Nav.Link > <Link  to="/">Home</Link></Nav.Link>
-      <Nav.Link ><Link  to="/about">About Us</Link></Nav.Link>
-      <Nav.Link ><Link  to="/movies">Movies</Link></Nav.Link>
+      <Nav.Link > <Link  to="/ftage">Home</Link></Nav.Link>
+      <Nav.Link ><Link  to="/ftage/about">About Us</Link></Nav.Link>
+      <Nav.Link ><Link  to="/ftage/movies">Movies</Link></Nav.Link>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleSearchTerm}/>
-      <Button variant="outline-dark"><i class="fas fa-search"></i></Button>
+      <Button variant="outline-movie"><i class="fas fa-search"></i></Button>
     </Form>
-    <Nav.Link ><Link  to="/favorit"><i class="fas fa-heart">{notheart}</i></Link> </Nav.Link>
+    <Nav.Link ><Link  to="/ftage/favorit"><i class="fas fa-heart">{notheart}</i></Link> </Nav.Link>
     <Button variant="primary" id="user" onClick={handleShow}>
     <Nav.Link href="#link"> <i class="far fa-user"></i></Nav.Link>
      </Button>

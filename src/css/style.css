@@ -3,7 +3,7 @@
 body{
     overflow-x:hidden;
 }
-.bg-light {
+.bg-movie {
     background-color: rgb(21 21 21) !important;
 }
 .navbar-light .navbar-nav .nav-link.active {
@@ -29,7 +29,7 @@ body{
   color: #e5af44;
 }
 .form-inline .form-control {
-    margin: 0 0 0 13%!important;
+    margin: 0 !important;
     color: #e5af44;
     background-color: #fff0;
     border: 1px solid #e5af44;
@@ -42,10 +42,10 @@ body{
   border: 1px solid #e5af44;
 }
 .form-control:focus {
-    color: #e5af44;
-    background-color:transparent;
-    border-color:#e5af44;
-    box-shadow: 0 0 0 0.2rem #e5af4480;
+    color: #e5af44 !important;
+    background-color:transparent !important;
+    border-color:#e5af44 !important;
+    box-shadow: 0 0 0 0.2rem #e5af4480 !important;
 }
 /***********************modal*****************/
 #user.btn-primary {
@@ -102,18 +102,18 @@ body{
         padding: 10px;
     }
 /*******************button serach*********/
-.btn-outline-dark:focus {
-    box-shadow: 0 0 0 0.2rem #e5af4480;
+.btn-outline-movie:focus {
+    box-shadow: 0 0 0 0.2rem #e5af4480 !important;
 }
-.btn-outline-dark {
-    color: #e5af44;
-    border-color: #e5af44;
+.btn-outline-movie {
+    color: #e5af44 !important;
+    border-color: #e5af44 !important;
 }
 
-.btn-outline-dark:hover {
-    color: rgb(0, 0, 0);
-    background-color: #e5af44;
-    border-color: #e5af44;
+.btn-outline-movie:hover {
+    color: rgb(0, 0, 0) !important;
+    background-color: #e5af44 !important;
+    border-color: #e5af44 !important;
 }
 
 .bg-sec2{

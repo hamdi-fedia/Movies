@@ -8,6 +8,7 @@ import CardMovies from './components/cardmov';
 import Favorit from './components/favorit';
 import { useState } from 'react';
 import Admin from './components/admin';
+import AddForm from './components/formadd';
 function App() {
 
   const[notheart , setNotheart] = useState(0);
@@ -37,12 +38,12 @@ function App() {
       <BrowserRouter>  
       
         
-          <Route exact path="/"> <Home addNotHeart = {addNotHeart}  notheart={notheart} addfavorit = {addfavorit}  handleSearchTerm={handleSearchTerm} searchMovie={searchMovie}/> </Route>
-          <Route   path="/about"> <AboutMou notheart={notheart} /></Route>
-          <Route   path="/movies" ><CardMovies notheart={notheart} addNotHeart = {addNotHeart} addfavorit = {addfavorit}  handleSearchTerm={handleSearchTerm} searchMovie={searchMovie}/></Route>
-          <Route   path="/favorit"> <Favorit favorit={favorit} notheart={notheart}/> </Route>
-          <Route   path="/admin"> <Admin></Admin> </Route>
-        
+          <Route exact path="/ftage"> <Home addNotHeart = {addNotHeart}  notheart={notheart} addfavorit = {addfavorit}  handleSearchTerm={handleSearchTerm} searchMovie={searchMovie}/> </Route>
+          <Route   path="/ftage/about"> <AboutMou notheart={notheart} /></Route>
+          <Route   path="/ftage/movies" ><CardMovies notheart={notheart} addNotHeart = {addNotHeart} addfavorit = {addfavorit}  handleSearchTerm={handleSearchTerm} searchMovie={searchMovie}/></Route>
+          <Route   path="/ftage/favorit"> <Favorit favorit={favorit} notheart={notheart}/> </Route>
+          <Route   path="/ftage/dashboard"> <Admin></Admin> </Route>
+ 
       </BrowserRouter>
     </div>
 
