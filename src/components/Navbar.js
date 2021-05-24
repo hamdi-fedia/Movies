@@ -7,7 +7,7 @@ import './Navbar.css';
 import { IconContext } from 'react-icons';
 import {Nav,Form,FormControl,Button} from 'react-bootstrap'
 
-function Navbar() {
+function Navbar({handleSearchTerm}) {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -22,7 +22,7 @@ function Navbar() {
           <Nav className="ml-auto">
    
               <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleSearchTerm}/>
                 <Button variant="outline-movie"><i class="fas fa-search"></i></Button>
               </Form>
           </Nav>

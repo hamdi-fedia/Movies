@@ -42,13 +42,19 @@ function App() {
           <Route   path="/ftage/about"> <AboutMou notheart={notheart} /></Route>
           <Route   path="/ftage/movies" ><CardMovies notheart={notheart} addNotHeart = {addNotHeart} addfavorit = {addfavorit}  handleSearchTerm={handleSearchTerm} searchMovie={searchMovie}/></Route>
           <Route   path="/ftage/favorit"> <Favorit favorit={favorit} notheart={notheart}/> </Route>
-          <Route   path="/ftage/dashboard"> <Admin></Admin> </Route>
+          <Route   path="/ftage/dashboard"> <Admin notheart={notheart} addNotHeart = {addNotHeart} addfavorit = {addfavorit}  handleSearchTerm={handleSearchTerm} searchMovie={searchMovie}></Admin> </Route>
  
       </BrowserRouter>
     </div>
 
 
  </div>
+
+
+
+
+
+
   );
 }
 

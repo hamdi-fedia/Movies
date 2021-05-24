@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #060b26;
+  background-color: rgb(21 21 21) !important;
   height: 80px;
   display: flex;
   justify-content: start;
@@ -15,7 +15,7 @@ svg{
   font-size: 30px !important;
 }
 .nav-menu {
-  background-color: #060b26;
+  background-color: rgb(21 21 21) !important;
   width: 20% !important;
   height: 100vh;
   display: flex;
@@ -64,7 +64,7 @@ span{
 }
 
 .navbar-toggle {
-  background-color: #060b26;
+  background-color: rgb(21 21 21) !important;
   width: 100%;
   height: 80px;
   display: flex;
@@ -74,4 +74,41 @@ span{
 
 span {
   margin-left: 16px;
+}
+
+/**************cardadmin*******************/
+
+.img-admin{
+  height: 15rem !important;
+}
+
+.add_card{
+  height: 24rem !important;
+  background-color: rgb(21 21 21 / 58%);
+}
+.add-icons{
+  font-size: 70px;
+  padding: 136px 51px;
+    color: rgb(229 175 68);
+}
+
+/***************form-add***********************/
+.label-admin-add{
+    font-size: 20px;
+    width: 25%;
+    color: wheat;
+    text-transform: uppercase;
+}
+input{
+  margin: 6px  0 !important;
+  color: #e5af44 ;
+  background-color: #fff0 ;
+  border: 1px solid #e5af44;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  background-clip: padding-box;
+  border-radius: .25rem;
+  width: 70%;
 }

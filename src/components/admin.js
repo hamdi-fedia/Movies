@@ -16,11 +16,12 @@ function Admin ({addNotHeart,notheart,addfavorit,handleSearchTerm,searchMovie}){
 
         <Router>
           
-        <Navbar />
+        <Navbar handleSearchTerm={handleSearchTerm}  notheart={notheart} />
         <Switch>
-          <Route path='/' exact > <Home></Home>  </Route>
-          <Route path='/ftage/dashboard/movies' >  <MoviesAdmin/> </Route>
-          <Route path='/products'><AddForm></AddForm> </Route>
+          <Route path='/ftage/dashboard' exact > <Home></Home>  </Route>
+          <Route exact path='/ftage/dashboard/movies' >  <MoviesAdmin searchMovie={searchMovie} addNotHeart = {addNotHeart} addfavorit = {addfavorit} /> </Route>
+          <Route exact path='/ftage/dashboard/movies/add' >  <AddForm></AddForm> </Route>
+          <Route path='/products'> </Route>
         </Switch>
       </Router>
 

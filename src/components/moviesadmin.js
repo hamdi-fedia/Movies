@@ -1,10 +1,10 @@
 import React, {useState,useEffect}from 'react'
 import Rater from 'react-rater'
 import axios from 'axios'
-
+import { Link } from "react-router-dom";
 import 'react-rater/lib/react-rater.css'
 
-function MoviesAdmin () {
+function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
   const [data, setData] = useState([]);
   const getData = () => {
 
@@ -28,16 +28,27 @@ function MoviesAdmin () {
          <div className="col-md-2 col-sm-4 col-xs-4 mt-4"></div>
          <div className="col-md-10 col-sm-8 col-xs-8 mt-4">
      <div className="row">
-      
+
+     <div className="col-md-3 col-sm-4 col-xs-3 mt-4">
+    <div className="card add_card">
+     
+      <div class="card-body">
+     
+      <Link  to="/ftage/dashboard/movies/add"> <i class="fas fa-plus add-icons"></i></Link>
+      </div>
+     </div>
+    </div>
    {
-    data.map(el => 
+    data.filter(el =>
+        el.title.toLowerCase().includes(searchMovie.toLowerCase())
+        ).map(el => 
         <>
 
     <div className="col-md-3 col-sm-4 col-xs-3 mt-4">
           <div className="card movie_card">
-      <img src={el.posterUrl} class="card-img-top" alt="..."></img>
+      <img src={el.posterUrl} class="img-admin" alt="..."></img>
       <div class="card-body">
-        <i class="fas fa-play play_buttonn" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+        <i class="fas fa-trash play_buttonn" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
         </i>
         
         <h5 class="card-title">{el.title}</h5>
