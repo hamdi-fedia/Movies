@@ -3,6 +3,7 @@ import Rater from 'react-rater'
 import axios from 'axios'
 import { Link } from "react-router-dom";
 import 'react-rater/lib/react-rater.css'
+import ModalUpdate from './modalUpdate';
 
 function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
   const [data, setData] = useState([]);
@@ -18,7 +19,13 @@ function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
   useEffect(() => {
     getData();
   }, []);
-   
+  
+  
+  function remove(e , id){
+    axios.delete(`http://localhost:3005/posts/${id}`)
+    .then((response) => console.log("hhhhhhhhhhhhhh", response))
+    .catch((err) => console.log("erreur", err) )
+  }
  
   return (
 
@@ -48,8 +55,14 @@ function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
           <div className="card movie_card">
       <img src={el.posterUrl} class="img-admin" alt="..."></img>
       <div class="card-body">
-        <i class="fas fa-trash play_buttonn" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-        </i>
+      <i class="fas fa-trash remove_button" onClick={(e)=>remove(e, el.id)} data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                </i>
+       
+        <div className="update_button">
+          <ModalUpdate el={el}/>
+        </div>
+    
+    
         
         <h5 class="card-title">{el.title}</h5>
           <span class="movie_info">{el.year}</span>

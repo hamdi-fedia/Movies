@@ -101,7 +101,7 @@ span {
 }
 input{
   margin: 6px  0 !important;
-  color: #e5af44 ;
+  color: #fdfdfd ;
   background-color: #fff0 ;
   border: 1px solid #e5af44;
   height: calc(1.5em + .75rem + 2px);
@@ -111,4 +111,39 @@ input{
   background-clip: padding-box;
   border-radius: .25rem;
   width: 70%;
+}
+.remove_button{
+  background-color: rgb(229 175 68);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  left: 50px;
+  bottom: 111px;
+  font-size: 21px;
+  padding-left: 11px;
+  padding-top: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.remove_button:hover{
+  color: black;
+}
+.update_button:hover{
+color: black;
+}
+
+.update_button{
+background-color: rgb(229 175 68);
+  position: absolute;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+right: 60px;
+bottom: 111px;
+font-size: 21px;
+padding-left: 11px;
+padding-top: 5px;
+color: #FFFFFF;
+cursor: pointer;
 }
