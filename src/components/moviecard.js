@@ -10,7 +10,7 @@ function Movies ({searchMovie,addNotHeart,addfavorit}) {
 
     axios.get('https://movies-app-16d8f-default-rtdb.firebaseio.com/posts.json').then((response) => {
 
-      setData( response.data);
+      setData(Object.values(response.data));
       console.log("response:", response);
 
   });

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Link } from "react-router-dom";
 import 'react-rater/lib/react-rater.css'
 import ModalUpdate from './modalUpdate';
+import AddForm from './formadd';
 
 
 function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
@@ -46,8 +47,9 @@ function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
     <div className="card add_card">
      
       <div class="card-body">
-     
-      <Link  to="/ftage/dashboard/movies/add"> <i class="fas fa-plus add-icons"></i></Link>
+      <AddForm/>
+      {/* <Link  to="/ftage/dashboard/movies/add">  */}
+      {/* </Link> */}
       </div>
      </div>
     </div>
