@@ -8,7 +8,7 @@ function Movies ({searchMovie,addNotHeart,addfavorit}) {
   const [data, setData] = useState([]);
   const getData = () => {
 
-    axios.get('http://localhost:3005/posts').then((response) => {
+    axios.get('https://movies-app-16d8f-default-rtdb.firebaseio.com/posts.json').then((response) => {
 
       setData( response.data);
       console.log("response:", response);

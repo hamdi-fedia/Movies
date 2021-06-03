@@ -5,28 +5,34 @@ import { Link } from "react-router-dom";
 import 'react-rater/lib/react-rater.css'
 import ModalUpdate from './modalUpdate';
 
+
 function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
-  const [data, setData] = useState([]);
-  const getData = () => {
+  const [datas, setDatas] = useState([]);
+  const getDatas = () => {
 
-    axios.get('http://localhost:3005/posts').then((response) => {
+    axios.get('https://movies-app-16d8f-default-rtdb.firebaseio.com/posts.json').then((response) => {
 
-      setData( response.data);
+      setDatas(response.data);
       console.log("response:", response);
 
   });
   }
   useEffect(() => {
-    getData();
+    getDatas();
   }, []);
   
   
-  function remove(e , id){
-    axios.delete(`http://localhost:3005/posts/${id}`)
+  const remove =(id)=>{
+    axios.delete(`https://movies-app-16d8f-default-rtdb.firebaseio.com/posts/${id}/.json`)
     .then((response) => console.log("hhhhhhhhhhhhhh", response))
+    .then(res=>refreshPage())    
     .catch((err) => console.log("erreur", err) )
   }
- 
+
+  const refreshPage = ()=>{
+    window.location.reload();
+ }
+
   return (
 
      <div className="bg-sec2 pt-5 pb-5">
@@ -46,27 +52,28 @@ function MoviesAdmin ({searchMovie,addNotHeart,addfavorit}) {
      </div>
     </div>
    {
-    data.filter(el =>
-        el.title.toLowerCase().includes(searchMovie.toLowerCase())
-        ).map(el => 
+   Object.keys(datas)
+  //  .filter((id) =>
+  //       datas[id].title.toLowerCase().includes(searchMovie.toLowerCase())
+        .map(id=> 
         <>
 
     <div className="col-md-3 col-sm-4 col-xs-3 mt-4">
           <div className="card movie_card">
-      <img src={el.posterUrl} class="img-admin" alt="..."></img>
+      <img src={datas[id].posterUrl} class="img-admin" alt="..."></img>
       <div class="card-body">
-      <i class="fas fa-trash remove_button" onClick={(e)=>remove(e, el.id)} data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+      <i class="fas fa-trash remove_button" onClick={()=>remove(id)} data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
                 </i>
        
         <div className="update_button">
-          <ModalUpdate el={el}/>
+          <ModalUpdate id={id} el={datas[id]}/>
         </div>
     
     
         
-        <h5 class="card-title">{el.title}</h5>
-          <span class="movie_info">{el.year}</span>
-          <span class="movie_info float-right"><Rater total={5} rating={el.vote} interactive={false} /></span>
+        <h5 class="card-title">{datas[id].title}</h5>
+          <span class="movie_info">{datas[id].year}</span>
+          <span class="movie_info float-right"><Rater total={5} rating={datas[id].vote} interactive={false} /></span>
       </div>
      </div>
     </div>

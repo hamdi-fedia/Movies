@@ -6,7 +6,7 @@ import {Form,Button,Modal} from 'react-bootstrap'
 
 
 
-function ModalUpdate({el}){
+function ModalUpdate({el , id}){
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -26,8 +26,8 @@ function ModalUpdate({el}){
         posterUrl : el.posterUrl,
       })
 
-      function upDateMovie(e , id){
-        axios.put(`http://localhost:3005/posts/${id}`,update)
+      function upDateMovie(id){
+        axios.put(`https://movies-app-16d8f-default-rtdb.firebaseio.com/posts/${id}.json`,update)
         .then((response) => console.log("hhhhhhhhhhhhhh", response))
         .catch((err) => console.log("erreur", err) )
         }
@@ -38,11 +38,6 @@ function ModalUpdate({el}){
         setupdate (newdata)
         console.log(newdata)
       }
-
-
-
-
-
 
   
     return(
@@ -69,67 +64,55 @@ function ModalUpdate({el}){
 
 
         
-        <Form onSubmit={(e)=>upDateMovie(e, el.id)}>
+        <Form >
             <Form.Group >
               <label className="label-admin-add">title</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.title} type="text" id="title" placeholder="title" /><br></br>
+              <input onChange={handleChangeMovie} value={update.title} type="text" id="title" placeholder="title" /><br></br>
 
       
               <label className="label-admin-add">year</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.year} type="text" id="year" placeholder="year" /><br></br>
+              <input onChange={handleChangeMovie} value={update.year} type="text" id="year" placeholder="year" /><br></br>
           
 
           
               <label className="label-admin-add">runtime</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.runtime} type="text" id="runtime" placeholder="runtime" /><br></br>
+              <input onChange={handleChangeMovie} value={update.runtime} type="text" id="runtime" placeholder="runtime" /><br></br>
            
 
           
               <label className="label-admin-add">vote</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.vote} type="text" id="vote" placeholder="vote" /><br></br>
+              <input onChange={handleChangeMovie} value={update.vote} type="text" id="vote" placeholder="vote" /><br></br>
            
 
            
               <label className="label-admin-add">genres</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.genres} type="text" id="genres" placeholder="genres" /><br></br>
+              <input onChange={handleChangeMovie} value={update.genres} type="text" id="genres" placeholder="genres" /><br></br>
             
 
            
               <label className="label-admin-add">director</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.director} type="text" id="director" placeholder="director" /><br></br>
+              <input onChange={handleChangeMovie} value={update.director} type="text" id="director" placeholder="director" /><br></br>
            
            
               <label className="label-admin-add">actors</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.actors} type="text" id="actors" placeholder="actors" /><br></br>
+              <input onChange={handleChangeMovie} value={update.actors} type="text" id="actors" placeholder="actors" /><br></br>
            
 
           
               <label className="label-admin-add">plot</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.actors} type="text" id="plot" placeholder="plot" /><br></br>
+              <input onChange={handleChangeMovie} value={update.actors} type="text" id="plot" placeholder="plot" /><br></br>
             
 
             
               <label className="label-admin-add">posterUrl</label>
-              <input onChange={(e)=>handleChangeMovie(e)} value={update.posterUrl} type="text" id="posterUrl" placeholder="posterUrl" /><br></br>
+              <input onChange={handleChangeMovie} value={update.posterUrl} type="text" id="posterUrl" placeholder="posterUrl" /><br></br>
            
             </Form.Group>
             
-            <Button className="mt-2" variant="outline-movie" type="submit">
+            <Button  onClick={upDateMovie(id)} className="mt-2" variant="outline-movie" type="submit">
               Submit
             </Button>
           </Form>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -16,7 +16,7 @@ function AddForm (){
   })
   function submit(e){
     e.preventDefault();
-    axios.post(' http://localhost:3005/posts',data)
+    axios.post('https://movies-app-16d8f-default-rtdb.firebaseio.com/posts.json',data)
     .then(res => {
       console.log(res.data)
     })
